@@ -1,0 +1,18 @@
+{
+  "name": "三基速查 · 医师题库",
+  "short_name": "三基速查",
+  "description": "2025 七院医师三基题库离线搜索工具",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f3efe3",
+  "theme_color": "#163b32",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
+

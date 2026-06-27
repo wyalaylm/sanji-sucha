@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#163b32">
+  <meta name="description" content="医师三基题库离线搜索工具">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <title>三基速查</title>
+</head>
+<body>
+  <div class="paper-grain" aria-hidden="true"></div>
+  <header class="masthead">
+    <div class="brand">
+      <span class="brand-mark">医</span>
+      <div>
+        <p class="eyebrow">2025 · 七院医师题库</p>
+        <h1>三基速查</h1>
+      </div>
+    </div>
+    <button id="installButton" class="install-button" hidden>添加到桌面</button>
+  </header>
+
+  <main>
+    <section class="search-panel" aria-labelledby="searchTitle">
+      <div class="search-heading">
+        <div>
+          <p class="section-number">01 / QUICK FIND</p>
+          <h2 id="searchTitle">记得几个字，就能找到答案。</h2>
+        </div>
+        <p id="libraryStat" class="library-stat">正在整理题库…</p>
+      </div>
+
+      <label class="search-box">
+        <span class="search-icon" aria-hidden="true"></span>
+        <input id="searchInput" type="search" inputmode="search" autocomplete="off"
+          placeholder="输入题目前几个字…" aria-label="搜索题目">
+        <button id="clearButton" class="clear-button" type="button" aria-label="清空搜索" hidden>×</button>
+      </label>
+
+      <div class="filter-row">
+        <label class="select-wrap">
+          <span>题库范围</span>
+          <select id="moduleFilter" aria-label="选择题库模块">
+            <option value="">全部模块</option>
+          </select>
+        </label>
+        <button id="favoritesFilter" class="favorite-filter" type="button" aria-pressed="false">
+          <span>☆</span> 只看收藏
+        </button>
+      </div>
+    </section>
+
+    <section class="results-section" aria-live="polite">
+      <div class="results-meta">
+        <p id="resultCount">输入关键词开始搜索</p>
+        <p class="hint">答案默认展开 · 点击星标可收藏</p>
+      </div>
+      <div id="results" class="results">
+        <div class="empty-state">
+          <div class="index-card" aria-hidden="true">
+            <span>A</span><span>B</span><span>C</span><span>D</span>
+          </div>
+          <h3>从题干开头输入</h3>
+          <p>例如输入“少尿是指”，优先显示题干开头完全匹配的结果。</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <template id="questionTemplate">
+    <article class="question-card">
+      <div class="card-topline">
+        <span class="module-badge"></span>
+        <button class="star-button" type="button" aria-label="收藏题目">☆</button>
+      </div>
+      <h3 class="question-text"></h3>
+      <ol class="options"></ol>
+      <div class="answer-strip">
+        <span class="answer-label">答案</span>
+        <strong class="answer-value"></strong>
+      </div>
+    </article>
+  </template>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
+
