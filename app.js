@@ -120,7 +120,7 @@ function render() {
 
 async function initialize() {
   try {
-    const response = await fetch("data/questions.json");
+    const response = await fetch("questions.json");
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     const data = await response.json();
     state.questions = data.questions;
