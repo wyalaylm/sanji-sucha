@@ -6,7 +6,7 @@ const APP_SHELL = [
   "./app.js",
   "./manifest.webmanifest",
   "./icon.svg",
-  "./data/questions.json"
+  "./questions.json"
 ];
 
 self.addEventListener("install", event => {
